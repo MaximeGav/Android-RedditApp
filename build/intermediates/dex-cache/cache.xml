@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/Android-RedditApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/Android-RedditApp/app/build/intermediates/pre-dexed/debug/classes-38388abb16a82bdfaa8500534fd63d19c18c2f0b.jar" />
+    </item>
+    <item
+        jar="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/Android-RedditApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/Android-RedditApp/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-3d6b35a3c6ae04aadc1428b850b85fb98ec683fd.jar" />
+    </item>
+    <item
+        jar="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/Android-RedditApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/Android-RedditApp/app/build/intermediates/pre-dexed/debug/classes-30eac002945ac822d5f7ce742443ca942d766b7c.jar" />
+    </item>
+    <item
+        jar="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/app/build/intermediates/pre-dexed/debug/classes-e7a91ca3a1b33de59aa037f1efe89dc318856ed6.jar" />
+    </item>
+    <item
+        jar="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-b82b09aef3d207d2b57bea9118e808507d1d0728.jar" />
+    </item>
+    <item
+        jar="/Users/Sandro/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-6733d1b86f2cd4963f9d3c4e784c9e0106ac9386.jar" />
+    </item>
+    <item
+        jar="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/Users/Sandro/Documents/3TIN/Native Apps I/RedditTestVoorExamen1/app/build/intermediates/pre-dexed/debug/classes-b39a8c6b5465cf853bb9106b20ed2c66b34b6ae1.jar" />
+    </item>
+
+</items>
