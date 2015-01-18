@@ -7,11 +7,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import school.reddittestvoorexamen1.OnPostSelectedListener;
+import school.reddittestvoorexamen1.Post;
 import school.reddittestvoorexamen1.R;
+import school.reddittestvoorexamen1.fragments.DetailsFragment;
 import school.reddittestvoorexamen1.fragments.MainFragment;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements OnPostSelectedListener {
 
     private FragmentManager fragmentManager;
 
@@ -54,4 +57,21 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    @Override
+    public void onPostSelected(Post post, boolean dualPane) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("selectedPost", post);
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        DetailsFragment detailsFragment = new DetailsFragment();
+        detailsFragment.setArguments(bundle);
+        if (dualPane) {
+            //Dus 2 fragmenten zichtbaar
+            fragmentTransaction.replace(R.id.details, detailsFragment, "PostDetails");
+        } else {
+            fragmentTransaction.replace(R.id.content_frame, detailsFragment, "PostDetails");
+        }
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 }

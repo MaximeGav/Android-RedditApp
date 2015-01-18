@@ -1,5 +1,6 @@
 package school.reddittestvoorexamen1.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -17,6 +18,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
+import school.reddittestvoorexamen1.OnPostSelectedListener;
 import school.reddittestvoorexamen1.adapters.MyAdapter;
 import school.reddittestvoorexamen1.OnPostListener;
 import school.reddittestvoorexamen1.Post;
@@ -29,9 +31,10 @@ public class MainFragment extends Fragment implements OnPostListener {
 
     private ArrayList<Post> posts;
     private MyAdapter myAdapter;
-    private FragmentManager fragmentManager;
+    //private FragmentManager fragmentManager;
     private boolean mDualPane;
     private JSONParser jsonParser;
+    private OnPostSelectedListener onPostSelectedListener;
 
     public MainFragment() {
         //Posts mag nie null zijn anders ebde een error in uw oncreateview
@@ -65,9 +68,10 @@ public class MainFragment extends Fragment implements OnPostListener {
         lv_posts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Post selected = (Post) adapterView.getItemAtPosition(position);
+                //Post selected = (Post) adapterView.getItemAtPosition(position);
+                onPostSelectedListener.onPostSelected((Post) adapterView.getItemAtPosition(position), mDualPane);
 
-                Bundle bundle = new Bundle();
+                /*Bundle bundle = new Bundle();
                 bundle.putSerializable("selectedPost", selected);
 
                 //Stuur data door
@@ -86,10 +90,21 @@ public class MainFragment extends Fragment implements OnPostListener {
                 }
 
                 fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                fragmentTransaction.commit();*/
             }
         });
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            onPostSelectedListener = (OnPostSelectedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnPostSelectedListener");
+        }
     }
 
     @Override

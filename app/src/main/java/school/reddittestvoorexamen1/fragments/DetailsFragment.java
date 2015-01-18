@@ -1,7 +1,5 @@
 package school.reddittestvoorexamen1.fragments;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,13 +12,11 @@ import school.reddittestvoorexamen1.Post;
 import school.reddittestvoorexamen1.R;
 import school.reddittestvoorexamen1.utils.tasks.ImageDownloadTask;
 
-
 public class DetailsFragment extends Fragment {
 
     private ImageView imageView;
     private TextView tvTitle;
     private Post p;
-
 
     public DetailsFragment() {
         // Required empty public constructor
