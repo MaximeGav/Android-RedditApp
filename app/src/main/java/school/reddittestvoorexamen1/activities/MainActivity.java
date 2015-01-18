@@ -13,7 +13,6 @@ import school.reddittestvoorexamen1.R;
 import school.reddittestvoorexamen1.fragments.DetailsFragment;
 import school.reddittestvoorexamen1.fragments.MainFragment;
 
-
 public class MainActivity extends ActionBarActivity implements OnPostSelectedListener {
 
     private FragmentManager fragmentManager;
@@ -23,7 +22,6 @@ public class MainActivity extends ActionBarActivity implements OnPostSelectedLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Alles voor fragmentmanager
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         MainFragment mainFragment = new MainFragment();
@@ -45,7 +43,7 @@ public class MainActivity extends ActionBarActivity implements OnPostSelectedLis
             }
 
             this.doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Druk nogmaals op back om de app te sluiten.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Push twice to close the app.", Toast.LENGTH_SHORT).show();
 
             new Handler().postDelayed(new Runnable() {
 
@@ -66,7 +64,7 @@ public class MainActivity extends ActionBarActivity implements OnPostSelectedLis
         DetailsFragment detailsFragment = new DetailsFragment();
         detailsFragment.setArguments(bundle);
         if (dualPane) {
-            //Dus 2 fragmenten zichtbaar
+            //So splitscreen with 2 fragments
             fragmentTransaction.replace(R.id.details, detailsFragment, "PostDetails");
         } else {
             fragmentTransaction.replace(R.id.content_frame, detailsFragment, "PostDetails");

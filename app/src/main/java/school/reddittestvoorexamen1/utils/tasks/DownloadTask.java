@@ -30,7 +30,6 @@ public class DownloadTask extends AsyncTask<String,String,String> {
     private Context context;
     private String result = "";
     private OnPostListener onPostListener;
-    private JSONParser jsonParser;
 
     public DownloadTask(Context context) {
         this.context = context;

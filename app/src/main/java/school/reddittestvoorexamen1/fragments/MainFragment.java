@@ -31,23 +31,17 @@ public class MainFragment extends Fragment implements OnPostListener {
 
     private ArrayList<Post> posts;
     private MyAdapter myAdapter;
-    //private FragmentManager fragmentManager;
     private boolean mDualPane;
     private JSONParser jsonParser;
     private OnPostSelectedListener onPostSelectedListener;
 
     public MainFragment() {
-        //Posts mag nie null zijn anders ebde een error in uw oncreateview
         posts = new ArrayList<Post>();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        //Eerst gaan we de JSON data ophalen met de posts in
-        //Als de data gedownload is zetten we een observer pattern die hier terugkomt vanuit de
-        //Downloadtask
         DownloadTask task = new DownloadTask(getActivity());
         task.setOnPostListener(this);
         task.execute();
@@ -68,29 +62,7 @@ public class MainFragment extends Fragment implements OnPostListener {
         lv_posts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                //Post selected = (Post) adapterView.getItemAtPosition(position);
                 onPostSelectedListener.onPostSelected((Post) adapterView.getItemAtPosition(position), mDualPane);
-
-                /*Bundle bundle = new Bundle();
-                bundle.putSerializable("selectedPost", selected);
-
-                //Stuur data door
-                DetailsFragment detailsFragment = new DetailsFragment();
-                detailsFragment.setArguments(bundle);
-
-                //Open de andere fragment
-                fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                if (mDualPane) {
-                    //Dus 2 fragmenten zichtbaar
-                    fragmentTransaction.replace(R.id.details, detailsFragment, "PostDetails");
-                } else {
-                    fragmentTransaction.replace(R.id.content_frame, detailsFragment, "PostDetails");
-                }
-
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();*/
             }
         });
         return rootView;
@@ -115,19 +87,13 @@ public class MainFragment extends Fragment implements OnPostListener {
     @Override
     public void onPostReceived(boolean success, String result) {
         if (success) {
-            //Als de GET voltooid is , bevat result een json object in string formaat
-            //Die gaan we nu parsen naar de objecten
-            //Hier alle posts ophalen
             try {
                 jsonParser = new JSONParser(result);
                 posts = jsonParser.parsePosts();
-                //ArrayList is dynamisch dus kunnen we via de adapter posts toevoegen
-                //Array is een fixed size, arraylist niet
                 myAdapter.addAll(posts);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }
     }
 

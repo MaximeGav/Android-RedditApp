@@ -32,7 +32,7 @@ public class MyAdapter extends ArrayAdapter<Post> {
         String shortTitle = post.getTitle();
         int maxChars = 50;
 
-        //Slechts x aantal karakters uit titel tonen
+        //Show only x number of chars
         if (post.getTitle().length() > maxChars) {
             shortTitle = shortTitle.substring(0,maxChars) + "...";
         }
